@@ -17,15 +17,39 @@
 3. Push this repo to GitHub; the **Deploy GitHub Pages** workflow should run and publish the site.
 4. After the first successful run, Pages shows the public URL (often under **Settings → Pages** or in the workflow summary).
 
-## Push this folder to a new GitHub repo
+## Remote for this project
 
-From your machine (replace placeholders):
+```text
+https://github.com/asepehri93/asepehri93.github.io.git
+```
+
+Live site (after Actions succeed): **https://asepehri93.github.io/**
+
+## Push this folder to GitHub
+
+From your machine:
 
 ```bash
 cd "/path/to/myWebsite"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git remote add origin https://github.com/asepehri93/asepehri93.github.io.git
 git push -u origin main
 ```
+
+If `origin` already exists with a wrong URL:
+
+```bash
+git remote set-url origin https://github.com/asepehri93/asepehri93.github.io.git
+git push -u origin main
+```
+
+If push fails with HTTP 400 on a large repo, try:
+
+```bash
+git config http.postBuffer 524288000
+git push -u origin main
+```
+
+Or use SSH: `git@github.com:asepehri93/asepehri93.github.io.git`
 
 If the remote repo was created with a README and you need to reconcile history:
 

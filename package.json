@@ -1,0 +1,9 @@
+{
+  "name": "alireza-portfolio",
+  "private": true,
+  "description": "Static portfolio for GitHub Pages",
+  "scripts": {
+    "build": "node -e \"const fs=require('fs');const p='index.html';if(!fs.existsSync(p))process.exit(1);const s=fs.readFileSync(p,'utf8');if(!s.includes('<!DOCTYPE html>'))process.exit(1);console.log('build: OK —',p,'(',(s.length/1024).toFixed(1),'KB)');\"",
+    "preview": "npx --yes serve -l 5173 ."
+  }
+}
